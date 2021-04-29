@@ -1,12 +1,14 @@
 package com.initiativeCounter.webserverMauven.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Logger;
 
 public class ServerListenerThread extends Thread {
-    private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private final static Logger LOGGER = LoggerFactory.getLogger(ServerListenerThread.class);
     private int port;
     private String webroot;
     private ServerSocket serverSocket;
@@ -34,8 +36,7 @@ public class ServerListenerThread extends Thread {
 
 
         } catch (IOException e) {
-            LOGGER.warning("Problem with settimg socket");
-            e.printStackTrace();
+            LOGGER.error("Problem with settimg socket", e);
         } finally {
             if(serverSocket != null){
                 try {

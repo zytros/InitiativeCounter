@@ -3,9 +3,10 @@ package com.initiativeCounter.webserverMauven;
 import com.initiativeCounter.webserverMauven.config.Configuration;
 import com.initiativeCounter.webserverMauven.config.ConfigurationManager;
 import com.initiativeCounter.webserverMauven.core.ServerListenerThread;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class Server {
 
-    private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
     public static void main(String args[]){
 
 

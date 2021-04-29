@@ -1,14 +1,16 @@
 package com.initiativeCounter.webserverMauven.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.util.logging.Logger;
 
 public class HttpConnectionWorkerThread extends Thread{
     private Socket socket;
-    private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private final static Logger LOGGER = LoggerFactory.getLogger(HttpConnectionWorkerThread.class);
 
 
     public HttpConnectionWorkerThread(Socket socket){
@@ -23,11 +25,7 @@ public class HttpConnectionWorkerThread extends Thread{
             inputStream = socket.getInputStream();
             outputStream = socket.getOutputStream();
 
-            int _byte;
 
-            while((_byte = inputStream.read()) >= 0){
-                System.out.print((char)_byte);
-            }
 
 
             // TODO read
@@ -52,8 +50,7 @@ public class HttpConnectionWorkerThread extends Thread{
             LOGGER.info(" *Connection Processing Finished");
 
         } catch (IOException e) {
-            LOGGER.warning("Problem with communication");
-            e.printStackTrace();
+            LOGGER.error("Problem with communication", e);
         } finally {
             if(inputStream != null){
                 try {
