@@ -3,17 +3,20 @@ package com.initiativeCounter.webserverMauven.application;
 import java.util.ArrayList;
 
 public class DataBuffer {
-    ArrayList buffer;
+    private ArrayList buffer;
 
     public DataBuffer() {
         this.buffer = new ArrayList<Message>();
     }
 
     public synchronized void append(Message msg){
-
+        buffer.add(msg);
     }
 
     public synchronized String getBuffer(){
-        return "";
+        String str = buffer.toString();
+        str = str.substring(1, str.length() - 1);
+        buffer.clear();
+        return str;
     }
 }

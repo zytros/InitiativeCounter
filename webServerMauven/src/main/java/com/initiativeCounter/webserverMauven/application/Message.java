@@ -2,20 +2,20 @@ package com.initiativeCounter.webserverMauven.application;
 
 public class Message {
     final int id;
-    final boolean initiative;
-    final int value;
+    final String method;
+    final String value;
 
-    public Message(int id, boolean initiative, int value) {
+    public Message(int id, String method, String value) {
         this.id = id;
-        this.initiative = initiative;
+        this.method = method;
         this.value = value;
     }
 
     @Override
     public String toString() {
         String str = Integer.toString(id) + " " +
-                Boolean.toString(initiative) + " " +
-                Integer.toString(value);
+                method + " " +
+                value;
         return str;
     }
 }

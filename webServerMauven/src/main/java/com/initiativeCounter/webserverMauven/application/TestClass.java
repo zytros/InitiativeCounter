@@ -1,20 +1,23 @@
 package com.initiativeCounter.webserverMauven.application;
 
 
-import java.util.ArrayList;
 
 public class TestClass {
     public static void main(String args[]){
-        ArrayList arrayList = new ArrayList<Message>();
-        Message m1 = new Message(1, false, 5);
-        Message m2 = new Message(2, true, 55);
-        Message m3 = new Message(3, false, 5);
 
-        arrayList.add(m1);
-        arrayList.add(m2);
-        arrayList.add(m3);
+        DataBuffer buffer = new DataBuffer();
+        Message m1 = new Message(1, "addHP", "10");
+        Message m2 = new Message(2, "setInitiative", "76");
+        Message m3 = new Message(3, "addItem", "bling");
 
-        String str = arrayList.toString();
+        buffer.append(m1);
+        buffer.append(m2);
+        buffer.append(m3);
+
+        String str = buffer.getBuffer();
+        System.out.println(str);
+
+        str = buffer.getBuffer();
         System.out.println(str);
     }
 }
