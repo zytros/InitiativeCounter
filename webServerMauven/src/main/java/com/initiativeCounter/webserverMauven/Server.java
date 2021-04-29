@@ -7,7 +7,7 @@ import com.initiativeCounter.webserverMauven.config.ConfigurationManager;
  * Driver Class for the server
  *
  */
-public class HttpServer {
+public class Server {
     public static void main(String args[]){
 
         System.out.println("Server started...");
