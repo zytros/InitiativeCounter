@@ -2,8 +2,20 @@ package com.inCounter.config;
 
 public class Configuration {
 
+
     private int port;
     private String webroot;
+
+    public Configuration(int port, String webroot){
+        this.port = port;
+        this.webroot = webroot;
+    }
+    public Configuration(int port){
+        this.port = port;
+    }
+    public Configuration(String webroot){
+        this.webroot = webroot;
+    }
 
     public int getPort() {
         return port;
