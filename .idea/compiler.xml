@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="webserver1.8" />
         <module name="webServerMauven" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="webserver1.8" target="11" />
       <module name="webServerMauven" target="11" />
     </bytecodeTargetLevel>
   </component>

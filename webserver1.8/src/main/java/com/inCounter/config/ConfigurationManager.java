@@ -1,7 +1,7 @@
-package com.initiativeCounter.webserverMauven.config;
+package com.inCounter.config;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.initiativeCounter.webserverMauven.util.Json;
+import com.inCounter.util.Json;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -32,7 +32,7 @@ public class ConfigurationManager {
         try {
             fr = new FileReader(filepath);
         } catch (FileNotFoundException e) {
-            throw new HttpConfiguratonException(e);
+            throw new HttpConfigurationException(e);
         }
         StringBuffer sb = new StringBuffer();
         int i;
@@ -41,19 +41,19 @@ public class ConfigurationManager {
                 sb.append((char) i);
             }
         }catch (IOException e){
-            throw new HttpConfiguratonException(e);
+            throw new HttpConfigurationException(e);
         }
         JsonNode conf = null;
         try {
             conf = Json.parse("true");
             //conf = Json.parse(sb.toString());
         } catch (IOException e) {
-            throw new HttpConfiguratonException("Error parsing the config file", e);
+            throw new HttpConfigurationException("Error parsing the config file", e);
         }
         try {
             myCurrentConfiguration = Json.fromJson(conf, Configuration.class);
         } catch (IOException e) {
-            throw new HttpConfiguratonException("Error parsing the config file internal", e);
+            throw new HttpConfigurationException("Error parsing the config file internal", e);
         }
     }
 
@@ -64,7 +64,7 @@ public class ConfigurationManager {
      */
     public Configuration getCurrentConfiguration(){
         if(myCurrentConfiguration == null){
-            throw new HttpConfiguratonException("No Current Configuration Set.");
+            throw new HttpConfigurationException("No Current Configuration Set.");
         }
         return myCurrentConfiguration;
     }
