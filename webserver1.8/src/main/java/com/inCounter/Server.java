@@ -5,6 +5,7 @@ import com.inCounter.config.ConfigurationManager;
 /**
  *
  * Driver Class for the server
+ * Dont use, its trash
  *
  */
 public class Server {
