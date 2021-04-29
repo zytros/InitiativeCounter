@@ -23,6 +23,12 @@ public class HttpConnectionWorkerThread extends Thread{
             inputStream = socket.getInputStream();
             outputStream = socket.getOutputStream();
 
+            int _byte;
+
+            while((_byte = inputStream.read()) >= 0){
+                System.out.print((char)_byte);
+            }
+
 
             // TODO read
             //dontcare
