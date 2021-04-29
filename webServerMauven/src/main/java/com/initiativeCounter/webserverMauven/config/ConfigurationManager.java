@@ -45,7 +45,6 @@ public class ConfigurationManager {
         }
         JsonNode conf = null;
         try {
-            //conf = Json.parse("true");
             conf = Json.parse(sb.toString());
         } catch (IOException e) {
             throw new HttpConfiguratonException("Error parsing the config file", e);
