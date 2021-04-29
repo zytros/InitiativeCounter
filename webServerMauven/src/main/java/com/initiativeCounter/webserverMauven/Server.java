@@ -1,5 +1,6 @@
 package com.initiativeCounter.webserverMauven;
 
+import com.initiativeCounter.webserverMauven.config.Configuration;
 import com.initiativeCounter.webserverMauven.config.ConfigurationManager;
 
 /**
@@ -13,6 +14,9 @@ public class Server {
         System.out.println("Server started...");
 
         ConfigurationManager.getInstance().loadConfigurationFile("webServerMauven/src/main/resources/http.json");
+        Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
+
+        System.out.printf("Using Port: %d\nUsing WebRoot: %s\n", conf.getPort(), conf.getWebroot());
 
     }
 }
