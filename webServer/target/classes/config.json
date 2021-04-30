@@ -1,0 +1,8 @@
+{
+  "port": 8080,
+  "display": "display",
+  "userEnd": "userEnd",
+  "error": "error",
+  "posResponse": "OK",
+  "noData": "noData"
+}

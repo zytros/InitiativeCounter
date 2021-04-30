@@ -1,6 +1,8 @@
 package com.inCounter;
 
 import com.inCounter.application.InputManager;
+import com.inCounter.config.Configuration;
+import com.inCounter.config.ConfigurationManager;
 import com.inCounter.core.ServerListenerThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,12 +13,17 @@ public class Server {
 
     public static void main(String args[]){
         LOGGER.info("Server starting...");
-        InputManager inputManager = new InputManager();
-        int port = 8080;
+
+
+
+        ConfigurationManager.getInstance().loadConfigurationFile("webServer/src/main/resources/config.json");
+        Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
+        InputManager inputManager = new InputManager(conf);
+        LOGGER.info("Configuration loaded");
 
         ServerListenerThread serverListenerThread = null;
         try {
-            serverListenerThread = new ServerListenerThread(port, inputManager);
+            serverListenerThread = new ServerListenerThread(conf.getPort(), inputManager, conf);
             serverListenerThread.start();
         } catch (IOException e) {
             e.printStackTrace();

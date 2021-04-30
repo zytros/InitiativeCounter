@@ -3,6 +3,7 @@ package com.inCounter.core;
 
 import com.inCounter.Server;
 import com.inCounter.application.InputManager;
+import com.inCounter.config.Configuration;
 import com.inCounter.util.IllegalMessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +18,13 @@ public class ConnectionWorkerThread extends Thread{
     private Socket socket;
     private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
     private InputManager inputManager;
+    private Configuration configuration;
 
 
-    public ConnectionWorkerThread(Socket socket, InputManager inputManager){
+    public ConnectionWorkerThread(Socket socket, InputManager inputManager, Configuration configuration){
         this.socket = socket;
         this.inputManager = inputManager;
-
+        this.configuration = configuration;
     }
 
     @Override
