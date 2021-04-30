@@ -24,6 +24,7 @@ public class UserEndThread extends Thread{
 
         try {
             Socket client = new Socket("localhost", 8080);
+            //Socket client = new Socket("srab.duckdns.org", 8080);
             DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
             outputStream.writeUTF(call);
 
