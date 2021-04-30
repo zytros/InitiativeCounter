@@ -11,10 +11,8 @@ import java.io.IOException;
 public class Server {
     private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         LOGGER.info("Server starting...");
-
-
 
         ConfigurationManager.getInstance().loadConfigurationFile("webServer/src/main/resources/config.json");
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
@@ -27,6 +25,12 @@ public class Server {
             serverListenerThread.start();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                serverListenerThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }

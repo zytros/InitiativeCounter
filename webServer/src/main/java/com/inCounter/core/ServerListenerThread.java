@@ -26,10 +26,8 @@ public class ServerListenerThread extends Thread{
             while(serverSocket.isBound() && !serverSocket.isClosed()) {
                 Socket socket = this.serverSocket.accept();
 
-
                 ConnectionWorkerThread workerThread = new ConnectionWorkerThread(socket, inputManager, configuration);
                 workerThread.start();
-
             }
 
 

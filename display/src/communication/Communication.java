@@ -17,7 +17,6 @@ public class Communication extends Thread{
         run = true;
     }
 
-
     @Override
     public void run() {
 
