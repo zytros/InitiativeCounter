@@ -25,7 +25,6 @@ public class ConnectionWorkerThread extends Thread{
 
 
 
-            // TODO read
 
             DataInputStream input = new DataInputStream(inputStream);
             System.out.println("Server: " + input.readUTF());

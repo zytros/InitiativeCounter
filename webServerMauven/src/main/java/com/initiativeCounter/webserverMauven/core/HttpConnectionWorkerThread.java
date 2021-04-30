@@ -28,10 +28,6 @@ public class HttpConnectionWorkerThread extends Thread{
 
 
 
-            // TODO read
-            //dontcare
-
-
             String html = "<html><head><title>Simple Java HTTP Server</title></head><body><h1>This page was served using my Server</h1></body></html>";
 
             final String CRLF = "\n\r";//13, 10

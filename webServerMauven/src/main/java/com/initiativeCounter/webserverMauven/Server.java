@@ -33,7 +33,6 @@ public class Server {
             serverListenerThread.start();
         } catch (IOException e) {
             e.printStackTrace();
-            // TODO handle
         }
 
     }

@@ -49,7 +49,6 @@ public class HttpParser {
                 }
             }
             if(_byte == SP){
-                // TODO process prev data
                 if(!methodParsed){
                     LOGGER.debug("Request Line METHOD to Process : {}", processingDataBuffer.toString());
                     request.setMethod(processingDataBuffer.toString());
