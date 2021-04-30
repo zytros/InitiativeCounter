@@ -27,7 +27,7 @@ public class ConnectionWorkerThread extends Thread{
 
     @Override
     public void run() {
-        LOGGER.info("New Connection");
+        //LOGGER.info("New Connection");
         InputStream inputStream = null;
         DataOutputStream outputStream = null;
         try {
@@ -37,7 +37,7 @@ public class ConnectionWorkerThread extends Thread{
 
             DataInputStream input = new DataInputStream(inputStream);
             String message = input.readUTF();
-            LOGGER.info("recieved message", message);
+            //LOGGER.info("recieved message", message);
 
 
             String response = null;
@@ -49,7 +49,7 @@ public class ConnectionWorkerThread extends Thread{
             }
             outputStream.writeUTF(response);
 
-            LOGGER.info("responded");
+            //LOGGER.info("responded");
 
         } catch (IOException e) {
             e.printStackTrace();

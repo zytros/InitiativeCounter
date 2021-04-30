@@ -11,7 +11,7 @@ public class TestClass {
     private static int i;
     public static void main(String args[]){
 
-        Random rnd = new Random();
+        Random rnd = new Random(1568);
         ArrayList<Thread> threads = new ArrayList<>();
         for(int i = 0; i < 20; i++){
             int dec = rnd.nextInt(10);
@@ -26,6 +26,8 @@ public class TestClass {
             }
         }
 
+
+
         for (Thread t : threads){
             try {
                 t.join();
@@ -34,6 +36,14 @@ public class TestClass {
             }
         }
 
+        Thread th = spawnDisplay();
+        th.setName(Integer.toString(99));
+        th.start();
+        try {
+            th.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static Thread spawnUserEnd(){

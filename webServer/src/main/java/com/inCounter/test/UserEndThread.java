@@ -32,7 +32,7 @@ public class UserEndThread extends Thread{
 
             client.close();
 
-            LOGGER.info("Client: Client shutdown");
+            //LOGGER.info("Client: Client shutdown");
         } catch (ConnectException e){
             LOGGER.error("no connection possible, try again", e);
         } catch (IOException e) {
