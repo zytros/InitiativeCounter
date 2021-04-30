@@ -1,7 +1,10 @@
-package server;
+package com.inCounter.core;
 
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 
 public class ConnectionWorkerThread extends Thread{

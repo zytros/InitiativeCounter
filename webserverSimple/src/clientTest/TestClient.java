@@ -1,9 +1,9 @@
 package clientTest;
 
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.Socket;
 
 public class TestClient {
@@ -21,6 +21,8 @@ public class TestClient {
             client.close();
 
             System.out.println("Client: Client shutdown");
+        } catch (ConnectException e){
+            System.out.println("no connection possible, try again");
         } catch (IOException e) {
             e.printStackTrace();
         }
