@@ -13,7 +13,7 @@ public class Message {
 
     @Override
     public String toString() {
-        String str = Integer.toString(id) + " " +
+        String str = id + " " +
                 method + " " +
                 value;
         return str;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InputManager {
-    private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(InputManager.class);
     private final String display = "display";
     private final String userEnd = "userEnd";
     private final String error = "error";
