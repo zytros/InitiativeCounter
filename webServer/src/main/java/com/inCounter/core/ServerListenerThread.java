@@ -1,5 +1,7 @@
 package com.inCounter.core;
 
+import com.inCounter.application.InputManager;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -7,10 +9,12 @@ import java.net.Socket;
 public class ServerListenerThread extends Thread{
     private int port;
     private ServerSocket serverSocket;
+    private InputManager inputManager;
 
-    public ServerListenerThread(int port) throws IOException {
+    public ServerListenerThread(int port, InputManager inputManager) throws IOException {
         this.port = port;
         this.serverSocket = new ServerSocket(this.port);
+        this.inputManager = inputManager;
     }
 
     @Override
@@ -20,7 +24,7 @@ public class ServerListenerThread extends Thread{
                 Socket socket = this.serverSocket.accept();
 
 
-                ConnectionWorkerThread workerThread = new ConnectionWorkerThread(socket);
+                ConnectionWorkerThread workerThread = new ConnectionWorkerThread(socket, inputManager);
                 workerThread.start();
 
             }

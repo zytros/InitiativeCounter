@@ -2,6 +2,8 @@ package com.inCounter.core;
 
 
 import com.inCounter.Server;
+import com.inCounter.application.InputManager;
+import com.inCounter.util.IllegalMessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,15 +16,18 @@ import java.net.Socket;
 public class ConnectionWorkerThread extends Thread{
     private Socket socket;
     private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
+    private InputManager inputManager;
 
 
-    public ConnectionWorkerThread(Socket socket){
+    public ConnectionWorkerThread(Socket socket, InputManager inputManager){
         this.socket = socket;
+        this.inputManager = inputManager;
+
     }
 
     @Override
     public void run() {
-        LOGGER.info("Server: New Connection");
+        LOGGER.info("New Connection");
         InputStream inputStream = null;
         DataOutputStream outputStream = null;
         try {
@@ -30,19 +35,21 @@ public class ConnectionWorkerThread extends Thread{
             outputStream = new DataOutputStream(socket.getOutputStream());
 
 
-
-
-
-            // TODO read
-
             DataInputStream input = new DataInputStream(inputStream);
             String message = input.readUTF();
-            LOGGER.info("Server: " + message);
+            LOGGER.info("recieved message", message);
 
 
-            String response = "recieved message";
+            String response = null;
+            try {
+                response = inputManager.readMessageAndRespond(message);
+            } catch (IllegalMessageException e) {
+                response = "IllegalMessageException :: " + e.toString() ;
+                LOGGER.error("IllegalMessageException :: ", e);
+            }
             outputStream.writeUTF(response);
 
+            LOGGER.info("responded");
 
         } catch (IOException e) {
             e.printStackTrace();
