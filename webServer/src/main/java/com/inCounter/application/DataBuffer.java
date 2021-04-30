@@ -19,4 +19,10 @@ public class DataBuffer {
         buffer.clear();
         return str;
     }
+    public synchronized boolean hasData(){
+        if(buffer.size() == 0){
+            return false;
+        }
+        return true;
+    }
 }

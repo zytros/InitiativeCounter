@@ -1,6 +1,10 @@
 package com.inCounter.core;
 
 
+import com.inCounter.Server;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -9,6 +13,7 @@ import java.net.Socket;
 
 public class ConnectionWorkerThread extends Thread{
     private Socket socket;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Server.class);
 
 
     public ConnectionWorkerThread(Socket socket){
@@ -17,7 +22,7 @@ public class ConnectionWorkerThread extends Thread{
 
     @Override
     public void run() {
-        System.out.println("Server: New Connection");
+        LOGGER.info("Server: New Connection");
         InputStream inputStream = null;
         DataOutputStream outputStream = null;
         try {
@@ -31,7 +36,8 @@ public class ConnectionWorkerThread extends Thread{
             // TODO read
 
             DataInputStream input = new DataInputStream(inputStream);
-            System.out.println("Server: " + input.readUTF());
+            String message = input.readUTF();
+            LOGGER.info("Server: " + message);
 
 
             String response = "recieved message";

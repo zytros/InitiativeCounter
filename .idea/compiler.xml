@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="webServerMauven" />
+        <module name="webServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="webServer" target="11" />
       <module name="webserver1.8" target="11" />
       <module name="webServerMauven" target="11" />
     </bytecodeTargetLevel>
