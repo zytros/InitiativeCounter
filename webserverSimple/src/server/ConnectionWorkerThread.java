@@ -1,9 +1,7 @@
 package server;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
 
 public class ConnectionWorkerThread extends Thread{
@@ -16,19 +14,27 @@ public class ConnectionWorkerThread extends Thread{
 
     @Override
     public void run() {
+        System.out.println("Server: New Connection");
         InputStream inputStream = null;
-        OutputStream outputStream = null;
+        DataOutputStream outputStream = null;
         try {
             inputStream = socket.getInputStream();
-            outputStream = socket.getOutputStream();
+            outputStream = new DataOutputStream(socket.getOutputStream());
+
 
 
 
 
             // TODO read
 
+            DataInputStream input = new DataInputStream(inputStream);
+            System.out.println("Server: " + input.readUTF());
 
 
+            String response = "recieved message";
+            outputStream.writeUTF(response);
+
+/*
             String html = "<html><head><title>Simple Java HTTP Server</title></head><body><h1>This page was served using my Server</h1></body></html>";
 
             final String CRLF = "\n\r";//13, 10
@@ -41,7 +47,7 @@ public class ConnectionWorkerThread extends Thread{
                             CRLF + CRLF;
 
             outputStream.write(response.getBytes());
-
+*/
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
