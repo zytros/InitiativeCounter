@@ -1,6 +1,6 @@
 package com.inCounter.test;
 
-public class qManualUserEndTest {
+public class ManualUserEndTest {
     public static void main(String args[]){
         UserEndThread userEndThread = new UserEndThread();
         Thread t = new Thread(userEndThread);
