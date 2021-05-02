@@ -8,6 +8,33 @@ public class Configuration {
     private  String error;
     private  String posResponse;
     private  String noData;
+    private String host;
+    private String serverShutdown;
+    private String password;
+
+    public String getServerShutdown() {
+        return serverShutdown;
+    }
+
+    public void setServerShutdown(String serverShutdown) {
+        this.serverShutdown = serverShutdown;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
 
     public String getNoData() {
         return noData;

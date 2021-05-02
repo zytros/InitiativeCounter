@@ -17,11 +17,13 @@ public class Server {
         ConfigurationManager.getInstance().loadConfigurationFile("webServer/src/main/resources/config.json");
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
         InputManager inputManager = new InputManager(conf);
+
         LOGGER.info("Configuration loaded");
 
         ServerListenerThread serverListenerThread = null;
         try {
-            serverListenerThread = new ServerListenerThread(conf.getPort(), inputManager, conf);
+            serverListenerThread = new ServerListenerThread(inputManager, conf);
+            inputManager.setServerListenerThread(serverListenerThread);
             serverListenerThread.start();
         } catch (IOException e) {
             e.printStackTrace();

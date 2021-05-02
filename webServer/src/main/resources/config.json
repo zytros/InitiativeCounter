@@ -4,5 +4,8 @@
   "userEnd": "userEnd",
   "error": "error",
   "posResponse": "OK",
-  "noData": "noData"
+  "noData": "noData",
+  "host": "srab.duckdns.org",
+  "serverShutdown": "shutdown",
+  "password": "coc"
 }
