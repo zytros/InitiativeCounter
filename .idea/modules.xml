@@ -3,12 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/display/display.iml" filepath="$PROJECT_DIR$/display/display.iml" />
+      <module fileurl="file://$PROJECT_DIR$/displayMauven/displayMauven.iml" filepath="$PROJECT_DIR$/displayMauven/displayMauven.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/git.iml" filepath="$PROJECT_DIR$/.idea/git.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinTest/kotlinTest.iml" filepath="$PROJECT_DIR$/kotlinTest/kotlinTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/userEnd/userEnd.iml" filepath="$PROJECT_DIR$/userEnd/userEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/webServer/webServer.iml" filepath="$PROJECT_DIR$/webServer/webServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webServerMauven/webServerMauven.iml" filepath="$PROJECT_DIR$/webServerMauven/webServerMauven.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webserverSimple/webserverSimple.iml" filepath="$PROJECT_DIR$/webserverSimple/webserverSimple.iml" />
     </modules>
   </component>
 </project>
