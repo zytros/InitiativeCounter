@@ -13,8 +13,8 @@ public class Message {
 
     @Override
     public String toString() {
-        String str = id + ", " +
-                method + ", " +
+        String str = id + " " +
+                method + " " +
                 value;
         return str;
     }
