@@ -28,24 +28,34 @@ public class Communication extends Thread{
         String call = "display";
         Socket client = null;
         String response = "";
-        DataOutputStream outputStream = null;
-        DataInputStream inputStream = null;
-        Queue<String> queue = new LinkedList<>();
-        try{
-            client = new Socket(address, port);
-            outputStream = new DataOutputStream(client.getOutputStream());
-            inputStream = new DataInputStream(client.getInputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
 
         while(run){
+            DataOutputStream outputStream = null;
+            DataInputStream inputStream = null;
+
+            try{
+                client = new Socket(address, port);
+                outputStream = new DataOutputStream(client.getOutputStream());
+                inputStream = new DataInputStream(client.getInputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             try {
                 outputStream.writeUTF(call);
-                String[] responsearr = inputStream.readUTF().split(" ");
-                for(int i= 0 ; i < responsearr.length; i += 3 )
-                share.q.add(new Caller(responsearr[i],responsearr[i+1], responsearr[i+2]));
+                //while(inputStream.available()>0) {
+                   // System.out.println(inputStream.readUTF());
+                response = inputStream.readUTF();
+                //System.out.println(response);
+                String[] responsearr = response.split("  ");
+
+                if(!responsearr[0].equals("noData")) {
+                    for (int i = 0; i < responsearr.length; i ++) {
+                        String[] action = responsearr[i].split(" ");
+                        share.add(new Caller(action[0], action[1], action[2]));
+                    }
+                }
 
 
             } catch (IOException e) {
