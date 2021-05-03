@@ -18,13 +18,13 @@ public class UserEndThread extends Thread{
     @Override
     public void run() {
 
-        Message msg = new Message(Integer.parseInt(Thread.currentThread().getName()), "eierChraule", "50");
+        Message msg = new Message(Integer.parseInt(Thread.currentThread().getName()), "shutdown", "coc");
 
         String call = "userEnd " + msg;
 
         try {
-            Socket client = new Socket("srab.duckdns.org", 25565);
-            //Socket client = new Socket("srab.duckdns.org", 8080);
+            Socket client = new Socket("localhost", 8080);
+            //Socket client = new Socket("srab.duckdns.org", 25565);
             DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
             outputStream.writeUTF(call);
 

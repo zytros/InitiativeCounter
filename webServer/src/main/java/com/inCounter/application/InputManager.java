@@ -2,6 +2,7 @@ package com.inCounter.application;
 
 import com.inCounter.Server;
 import com.inCounter.config.Configuration;
+import com.inCounter.core.ServerListenerThread;
 import com.inCounter.util.IllegalMessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +12,13 @@ import java.util.Scanner;
 
 public class InputManager {
     private final static Logger LOGGER = LoggerFactory.getLogger(InputManager.class);
-    DataBuffer dataBuffer;
+    private DataBuffer dataBuffer;
     private Configuration configuration;
+    private ServerListenerThread serverListenerThread;
+
     public InputManager(Configuration configuration){
         this.configuration = configuration;
-        dataBuffer = new DataBuffer();
+        this.dataBuffer = new DataBuffer();
 
     }
 
@@ -48,8 +51,15 @@ public class InputManager {
                 int id = Integer.parseInt(frags.get(1));
                 String method = frags.get(2);
                 String value = frags.get(3);
+
+                if(method.equals(configuration.getServerShutdown())){
+                    serverListenerThread.serverShutdown(value);
+                    return configuration.getPosResponse();
+                }
+
                 Message msg = new Message(id, method, value);
                 dataBuffer.append(msg);
+
             } catch (Exception e) {
                 LOGGER.error("Invalid Message to save", e);
                 return configuration.getError();
@@ -59,6 +69,10 @@ public class InputManager {
         }else{
             throw new IllegalMessageException("Message has invalid sender");
         }
+    }
+
+    public void setServerListenerThread(ServerListenerThread serverListenerThread){
+        this.serverListenerThread = serverListenerThread;
     }
 
 }

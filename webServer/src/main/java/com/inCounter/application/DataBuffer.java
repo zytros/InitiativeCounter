@@ -16,6 +16,7 @@ public class DataBuffer {
     public synchronized String getBuffer(){
         String str = buffer.toString();
         str = str.substring(1, str.length() - 1);
+        str = str.replace(',', ' ');
         buffer.clear();
         return str;
     }
