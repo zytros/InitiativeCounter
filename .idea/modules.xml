@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/git.iml" filepath="$PROJECT_DIR$/.idea/git.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinTest/kotlinTest.iml" filepath="$PROJECT_DIR$/kotlinTest/kotlinTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/userEnd/userEnd.iml" filepath="$PROJECT_DIR$/userEnd/userEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userEndMauven/userEndMauven.iml" filepath="$PROJECT_DIR$/userEndMauven/userEndMauven.iml" />
       <module fileurl="file://$PROJECT_DIR$/webServer/webServer.iml" filepath="$PROJECT_DIR$/webServer/webServer.iml" />
     </modules>
   </component>
