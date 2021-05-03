@@ -44,11 +44,6 @@ public class Communication extends Thread{
             try {
                 outputStream.writeUTF(call);
                 String[] responsearr = inputStream.readUTF().split(" ");
-
-                /**
-                 * response here available
-                 * TODO: use response
-                 */
                 for(int i= 0 ; i < responsearr.length; i += 3 )
                 share.q.add(new Caller(responsearr[i],responsearr[i+1], responsearr[i+2]));
 
