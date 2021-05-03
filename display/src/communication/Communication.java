@@ -4,17 +4,22 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Communication extends Thread{
 
     private boolean run;
     private String address;
     private int port;
+    public SharedQueue share;
 
-    public Communication(String address, int port){
+
+    public Communication(String address, int port, SharedQueue share){
         this.address = address;
         this.port = port;
         run = true;
+        this.share = share;
     }
 
     @Override
@@ -25,6 +30,7 @@ public class Communication extends Thread{
         String response = "";
         DataOutputStream outputStream = null;
         DataInputStream inputStream = null;
+        Queue<String> queue = new LinkedList<>();
         try{
             client = new Socket(address, port);
             outputStream = new DataOutputStream(client.getOutputStream());
@@ -37,12 +43,15 @@ public class Communication extends Thread{
         while(run){
             try {
                 outputStream.writeUTF(call);
-                response = inputStream.readUTF();
+                String[] responsearr = inputStream.readUTF().split(" ");
 
                 /**
                  * response here available
                  * TODO: use response
                  */
+                for(int i= 0 ; i < responsearr.length; i += 3 )
+                share.q.add(new Caller(responsearr[i],responsearr[i+1], responsearr[i+2]));
+
 
             } catch (IOException e) {
                 e.printStackTrace();
