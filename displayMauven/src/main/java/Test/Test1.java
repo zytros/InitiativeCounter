@@ -1,11 +1,11 @@
 package Test;
 
 
+import com.inCounter.shared.config.Configuration;
+import com.inCounter.shared.config.ConfigurationManager;
 import communication.Caller;
 import communication.Communication;
 import communication.SharedQueue;
-import config.Configuration;
-import config.ConfigurationManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

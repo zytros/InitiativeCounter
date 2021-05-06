@@ -1,7 +1,7 @@
-package com.inCounter.config;
+package com.inCounter.shared.config;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.inCounter.util.Json;
+import com.inCounter.shared.util.Json;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

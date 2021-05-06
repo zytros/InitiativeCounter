@@ -1,6 +1,6 @@
 package communication;
 
-import config.Configuration;
+import com.inCounter.shared.config.Configuration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

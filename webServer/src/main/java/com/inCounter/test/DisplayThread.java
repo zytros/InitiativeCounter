@@ -17,8 +17,8 @@ public class DisplayThread extends Thread{
     public void run() {
         String call = "display";
         try {
-            //Socket client = new Socket("localhost", 8080);
-            Socket client = new Socket("srab.duckdns.org", 25565);
+            Socket client = new Socket("localhost", 8080);
+            //Socket client = new Socket("srab.duckdns.org", 25565);
             DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
             DataInputStream inputStream = new DataInputStream(client.getInputStream());
             outputStream.writeUTF(call);

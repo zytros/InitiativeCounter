@@ -1,9 +1,11 @@
 package com.inCounter;
 
 import com.inCounter.application.InputManager;
-import com.inCounter.config.Configuration;
-import com.inCounter.config.ConfigurationManager;
 import com.inCounter.core.ServerListenerThread;
+
+
+import com.inCounter.shared.config.Configuration;
+import com.inCounter.shared.config.ConfigurationManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class  Server {
     public static void main(String[] args){
         LOGGER.info("Server starting...");
 
-        ConfigurationManager.getInstance().loadConfigurationFile("webServer/src/main/resources/config.json");
+        ConfigurationManager.getInstance().loadConfigurationFile("shared/src/main/resources/config.json");
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
         InputManager inputManager = new InputManager(conf);
 

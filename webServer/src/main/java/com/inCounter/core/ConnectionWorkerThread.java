@@ -3,8 +3,8 @@ package com.inCounter.core;
 
 import com.inCounter.Server;
 import com.inCounter.application.InputManager;
-import com.inCounter.config.Configuration;
-import com.inCounter.util.IllegalMessageException;
+import com.inCounter.shared.config.Configuration;
+import com.inCounter.shared.util.IllegalMessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

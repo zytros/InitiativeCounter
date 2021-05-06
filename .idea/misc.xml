@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/webServer/pom.xml" />
         <option value="$PROJECT_DIR$/displayMauven/pom.xml" />
         <option value="$PROJECT_DIR$/userEndMauven/pom.xml" />
+        <option value="$PROJECT_DIR$/shared/pom.xml" />
       </list>
     </option>
   </component>

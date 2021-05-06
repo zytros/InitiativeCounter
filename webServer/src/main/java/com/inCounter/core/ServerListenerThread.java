@@ -1,7 +1,7 @@
 package com.inCounter.core;
 
 import com.inCounter.application.InputManager;
-import com.inCounter.config.Configuration;
+import com.inCounter.shared.config.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

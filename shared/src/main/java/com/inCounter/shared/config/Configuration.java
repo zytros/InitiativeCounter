@@ -1,4 +1,4 @@
-package config;
+package com.inCounter.shared.config;
 
 public class Configuration {
 

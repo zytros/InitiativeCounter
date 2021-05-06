@@ -1,4 +1,4 @@
-package com.inCounter.config;
+package com.inCounter.shared.config;
 
 public class HttpConfiguratonException extends RuntimeException{
     public HttpConfiguratonException() {

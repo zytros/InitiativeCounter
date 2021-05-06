@@ -1,4 +1,4 @@
-package util;
+package com.inCounter.shared.util;
 
 public class IllegalMessageException extends IllegalArgumentException{
     public IllegalMessageException() {

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shared" />
         <module name="userEndMauven" />
         <module name="webServer" />
         <module name="displayMauven" />
@@ -13,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="displayMauven" target="11" />
+      <module name="shared" target="11" />
       <module name="userEndMauven" target="11" />
       <module name="webServer" target="11" />
       <module name="webserver1.8" target="11" />
