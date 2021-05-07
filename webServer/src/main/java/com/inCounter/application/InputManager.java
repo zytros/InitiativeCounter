@@ -54,13 +54,28 @@ public class InputManager {
                 String method = frags.get(2);
                 String value = frags.get(3);
 
+                /**
+                 * Commands resolved on Server
+                 */
                 if(method.equals(configuration.getServerShutdown())){
                     serverListenerThread.serverShutdown(value);
                     return configuration.getPosResponse();
-                }if(method.equals(configuration.getGetId())){
+                }
+
+                if(method.equals(configuration.getGetId())){
+                    LOGGER.info("Assigned new client ID: " + (this.id + 1));
                     return getId();
                 }
 
+                if(method.equals((configuration.getNewSession()))){
+                    this.id = 0;
+                    LOGGER.info("Reset current Session, set ID to " + this.id);
+                    return configuration.getPosResponse();
+                }
+
+                /**
+                 * Message forwarding
+                 */
                 Message msg = new Message(id, method, value);
                 dataBuffer.append(msg);
 

@@ -12,6 +12,15 @@ public class Configuration {
     private String serverShutdown;
     private String password;
     private String getId;
+    private String newSession;
+
+    public String getNewSession() {
+        return newSession;
+    }
+
+    public void setNewSession(String newSession) {
+        this.newSession = newSession;
+    }
 
     public String getGetId() {
         return getId;

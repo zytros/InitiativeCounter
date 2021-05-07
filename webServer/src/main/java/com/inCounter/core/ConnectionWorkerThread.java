@@ -1,6 +1,5 @@
 package com.inCounter.core;
 
-
 import com.inCounter.Server;
 import com.inCounter.application.InputManager;
 import com.inCounter.shared.config.Configuration;
@@ -44,8 +43,8 @@ public class ConnectionWorkerThread extends Thread{
             try {
                 response = inputManager.readMessageAndRespond(message);
             } catch (IllegalMessageException e) {
-                response = "IllegalMessageException :: " + e.toString() ;
-                LOGGER.error("IllegalMessageException :: ", e);
+                response = "IllegalMessageException :: " + e ;
+                LOGGER.error("IllegalMessageException :: ", response);
             }
             outputStream.writeUTF(response);
 

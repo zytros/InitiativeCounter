@@ -4,7 +4,6 @@ import com.inCounter.application.Message;
 import com.inCounter.shared.config.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import util.IllegalMessageException;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
