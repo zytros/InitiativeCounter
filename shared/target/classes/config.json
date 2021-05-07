@@ -5,7 +5,8 @@
   "error": "error",
   "posResponse": "OK",
   "noData": "noData",
-  "host": "srab.duckdns.org",
+  "host": "localhost",
   "serverShutdown": "shutdown",
-  "password": "coc"
+  "password": "coc",
+  "getId": "getId"
 }
