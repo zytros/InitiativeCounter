@@ -14,10 +14,12 @@ public class InputManager {
     private DataBuffer dataBuffer;
     private Configuration configuration;
     private ServerListenerThread serverListenerThread;
+    int id;
 
     public InputManager(Configuration configuration){
         this.configuration = configuration;
         this.dataBuffer = new DataBuffer();
+        this.id = 0;
 
     }
 
@@ -55,6 +57,8 @@ public class InputManager {
                 if(method.equals(configuration.getServerShutdown())){
                     serverListenerThread.serverShutdown(value);
                     return configuration.getPosResponse();
+                }if(method.equals(configuration.getGetId())){
+                    return getId();
                 }
 
                 Message msg = new Message(id, method, value);
@@ -73,6 +77,10 @@ public class InputManager {
 
     public void setServerListenerThread(ServerListenerThread serverListenerThread){
         this.serverListenerThread = serverListenerThread;
+    }
+
+    private String getId(){
+        return Integer.toString(++id);
     }
 
 }

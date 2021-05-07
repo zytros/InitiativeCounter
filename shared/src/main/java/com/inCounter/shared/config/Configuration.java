@@ -11,6 +11,15 @@ public class Configuration {
     private String host;
     private String serverShutdown;
     private String password;
+    private String getId;
+
+    public String getGetId() {
+        return getId;
+    }
+
+    public void setGetId(String getId) {
+        this.getId = getId;
+    }
 
     public String getServerShutdown() {
         return serverShutdown;
