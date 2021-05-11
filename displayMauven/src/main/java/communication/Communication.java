@@ -52,6 +52,11 @@ public class Communication extends Thread{
                 if(!responsearr[0].equals(configuration.getNoData())) {
                     for (int i = 0; i < responsearr.length; i ++) {
                         String[] action = responsearr[i].split(" ");
+                        if(action.length > 3){
+                            for(int j = 3; j < action.length; j++){
+                                action[2] = action[2] + " " + action[j];
+                            }
+                        }
                         share.add(new Caller(action[0], action[1], action[2]));
                     }
                 }
