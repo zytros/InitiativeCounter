@@ -16,7 +16,7 @@ public class Test1 {
 
     public static void main(String[] args) throws InterruptedException {
 
-        ConfigurationManager.getInstance().loadConfigurationFile("displayMauven/src/main/resources/config.json");
+        ConfigurationManager.getInstance().loadConfigurationFile("shared/src/main/resources/config.json");
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
         SharedQueue show = new SharedQueue();
