@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CharPanel extends JPanel {
-    JLabel Name;
+    public JLabel Name;
     JLabel HP;
-    JLabel HPValue;
+    public JLabel HPValue;
     JLabel In;
-    JLabel InValue;
+    public JLabel InValue;
     GridLayout layout = new GridLayout(3,2,20,0);
 
 

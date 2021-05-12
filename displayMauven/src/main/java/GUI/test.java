@@ -17,6 +17,7 @@ public class test extends Thread {
     private JButton button2;
     private JFrame frame;
     private int x=0;
+    private int Cnext= 1;
     private int iter = 0;
     private ArrayList<CharPanel> panels = new ArrayList<>(0);
 
@@ -27,7 +28,7 @@ public class test extends Thread {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                CharPanel char1 = new CharPanel(C.get(1).getName(),20,12);
+                CharPanel char1 = C.get(Cnext).panel;
                 panels.add(char1);
                 char1.setBackground(Color.DARK_GRAY);
                 char1.setMaximumSize(new Dimension(600, 300));
@@ -38,6 +39,7 @@ public class test extends Thread {
                 frame.invalidate();
                 frame.validate();
                 frame.repaint();
+                Cnext++;
 
             }
         });
@@ -60,6 +62,7 @@ public class test extends Thread {
         frame.pack();
         frame.setVisible(true);
         frame.setLayout(new java.awt.BorderLayout());
+
     }
 
     /*public static void main(String[] args) throws InterruptedException {
