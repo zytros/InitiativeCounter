@@ -1,13 +1,16 @@
 {
-  "port": 25565,
+  "port": 8080,
   "display": "display",
   "userEnd": "userEnd",
   "error": "error",
   "posResponse": "OK",
   "noData": "noData",
-  "host": "srab.duckdns.org",
+  "host": "localhost",
   "serverShutdown": "shutdown",
   "password": "coc",
   "getId": "getId",
-  "newSession": "newSession"
+  "newSession": "newSession",
+  "setName": "setName",
+  "setInitiative": "setInitiative",
+  "cangeHP": "changeHP"
 }

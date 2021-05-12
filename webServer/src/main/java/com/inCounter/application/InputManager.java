@@ -32,6 +32,7 @@ public class InputManager {
      */
 
     public synchronized String readMessageAndRespond(String message)throws IllegalMessageException{
+        String[] msg = new String[3];
         if(message == null){
             throw new IllegalMessageException("Message == null");
         }
@@ -40,11 +41,12 @@ public class InputManager {
         while(sc.hasNext()){
             frags.add(sc.next());
         }
-        if(frags.size() > 3){
-            String frag2 = frags.get(2);
-            frags.remove(2);
-            for(int i = 3; i < frags.size();i++){
-                frag2 = frag2 + " " + frags.get(i);
+        if(frags.size() > 4){
+            String frag2 = frags.get(3);
+            frags.remove(3);
+            for(int i = 4; i < frags.size();i++){
+                String frag = frags.get(i);
+                frag2 = frag2 + " " + frag;
                 frags.remove(i);
             }
             frags.add(frag2);

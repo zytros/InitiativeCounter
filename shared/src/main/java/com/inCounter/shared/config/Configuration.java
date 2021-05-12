@@ -13,6 +13,33 @@ public class Configuration {
     private String password;
     private String getId;
     private String newSession;
+    private String setName;
+    private String setInitiative;
+    private String changeHP;
+
+    public String getSetName() {
+        return setName;
+    }
+
+    public void setSetName(String setName) {
+        this.setName = setName;
+    }
+
+    public String getSetInitiative() {
+        return setInitiative;
+    }
+
+    public void setSetInitiative(String setInitiative) {
+        this.setInitiative = setInitiative;
+    }
+
+    public String getChangeHP() {
+        return changeHP;
+    }
+
+    public void setChangeHP(String changeHP) {
+        this.changeHP = changeHP;
+    }
 
     public String getNewSession() {
         return newSession;

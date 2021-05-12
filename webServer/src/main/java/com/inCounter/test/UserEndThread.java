@@ -17,7 +17,7 @@ public class UserEndThread extends Thread{
     @Override
     public void run() {
 
-        Message msg = new Message(Integer.parseInt(Thread.currentThread().getName()), "fegit", "50");
+        Message msg = new Message(Integer.parseInt(Thread.currentThread().getName()), "setName", "hello bob");
 
         String call = "userEnd " + msg;
 
