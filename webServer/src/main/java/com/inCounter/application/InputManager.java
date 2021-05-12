@@ -50,7 +50,7 @@ public class InputManager {
             str_msg[0] = frags.get(1);
             str_msg[1] = frags.get(2);
             str_msg[2] = frag3;
-        }else{
+        }else if (frags.size() == 4){
             str_msg[0] = frags.get(1);
             str_msg[1] = frags.get(2);
             str_msg[2] = frags.get(3);
