@@ -40,6 +40,16 @@ public class InputManager {
         while(sc.hasNext()){
             frags.add(sc.next());
         }
+        if(frags.size() > 3){
+            String frag2 = frags.get(2);
+            frags.remove(2);
+            for(int i = 3; i < frags.size();i++){
+                frag2 = frag2 + " " + frags.get(i);
+                frags.remove(i);
+            }
+            frags.add(frag2);
+        }
+
         /**
          * message decoding
          */
