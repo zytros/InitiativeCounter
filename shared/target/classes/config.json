@@ -9,5 +9,8 @@
   "serverShutdown": "shutdown",
   "password": "coc",
   "getId": "getId",
-  "newSession": "newSession"
+  "newSession": "newSession",
+  "setName": "setName",
+  "setInitiative": "setInitiative",
+  "cangeHP": "changeHP"
 }

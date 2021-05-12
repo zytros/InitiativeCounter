@@ -32,7 +32,7 @@ public class InputManager {
      */
 
     public synchronized String readMessageAndRespond(String message)throws IllegalMessageException{
-        String[] msg = new String[3];
+        String[] str_msg = new String[3];
         if(message == null){
             throw new IllegalMessageException("Message == null");
         }
@@ -42,15 +42,21 @@ public class InputManager {
             frags.add(sc.next());
         }
         if(frags.size() > 4){
-            String frag2 = frags.get(3);
-            frags.remove(3);
+            String frag3 = frags.get(3);
             for(int i = 4; i < frags.size();i++){
                 String frag = frags.get(i);
-                frag2 = frag2 + " " + frag;
-                frags.remove(i);
+                frag3 = frag3 + " " + frag;
             }
-            frags.add(frag2);
+            str_msg[0] = frags.get(1);
+            str_msg[1] = frags.get(2);
+            str_msg[2] = frag3;
+        }else{
+            str_msg[0] = frags.get(1);
+            str_msg[1] = frags.get(2);
+            str_msg[2] = frags.get(3);
         }
+
+
 
         /**
          * message decoding
@@ -62,9 +68,9 @@ public class InputManager {
             return configuration.getNoData();
         }else if(frags.get(0).equals(configuration.getUserEnd())){//message from userEnd, write data in temp mem
             try {
-                int id = Integer.parseInt(frags.get(1));
-                String method = frags.get(2);
-                String value = frags.get(3);
+                int id = Integer.parseInt(str_msg[0]);
+                String method = str_msg[1];
+                String value = str_msg[2];
 
                 /**
                  * Commands resolved on Server
@@ -90,6 +96,7 @@ public class InputManager {
                  */
                 Message msg = new Message(id, method, value);
                 dataBuffer.append(msg);
+
 
             } catch (Exception e) {
                 LOGGER.error("Invalid Message to save", e);
