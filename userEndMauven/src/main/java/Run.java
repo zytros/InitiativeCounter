@@ -14,8 +14,11 @@ public class Run {
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
         Communication communication = new Communication(conf);
-        communication.sendMessage("gay", "2");
+        communication.sendMessage("setName", "Luca");
+        communication.sendMessage("changeHP", "10");
+        communication.sendMessage("setInitiative", "15");
 
+        /*
         Communication communication2 = new Communication(conf);
         communication2.sendMessage("gay", "2");
 
@@ -29,7 +32,7 @@ public class Run {
         communication5.sendMessage(conf.getNewSession(), "0");
 
         Communication communication6 = new Communication(conf);
-        communication6.sendMessage("gay", "2");
+        communication6.sendMessage("gay", "2");*/
 
 
         LOGGER.info("Run running");
