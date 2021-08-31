@@ -1,5 +1,4 @@
 
-import com.inCounter.application.Message;
 import com.inCounter.shared.config.Configuration;
 import com.inCounter.shared.config.ConfigurationManager;
 import communication.Communication;
