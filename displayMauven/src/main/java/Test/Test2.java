@@ -1,6 +1,7 @@
 package Test;
 
 
+import GUI.Frame;
 import GUI.test;
 import character.Character;
 import com.inCounter.shared.config.Configuration;
@@ -26,12 +27,17 @@ public class Test2 {
 
         HashMap<Integer,Character> C = new HashMap<>();
         SharedQueue show = new SharedQueue();
+
         show.q.add(new Caller("1","addChar",null));
         show.q.add(new Caller("2","addChar",null));
+        show.q.add(new Caller("3","addChar",null));
+        show.q.add(new Caller("1", "setInitiative", "22.0"));
+        show.q.add(new Caller("2", "setInitiative", "18.0"));
+        show.q.add(new Caller("3", "setInitiative", "15.0"));
         Communication com = new Communication(show, conf);
         Thread t = new Thread(com);
         t.start();
-        test gui = new test(C);
+        Frame gui = new Frame(C);
         Thread g = new Thread(gui);
         g.start();
 

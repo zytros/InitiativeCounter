@@ -12,7 +12,7 @@ public class CharPanel extends JPanel {
     GridLayout layout = new GridLayout(3,2,20,0);
 
 
-    public CharPanel(String name, int Hp, int in){
+    public CharPanel(String name, int Hp, double in){
         Font kek = new Font("lel",Font.BOLD,30);
         this.setLayout(layout);
         Name = new JLabel(name);

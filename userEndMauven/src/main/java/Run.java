@@ -14,22 +14,8 @@ public class Run {
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
         Communication communication = new Communication(conf);
-        communication.sendMessage("gay", "2");
+        communication.sendMessage("create", "2");
 
-        Communication communication2 = new Communication(conf);
-        communication2.sendMessage("gay", "2");
-
-        Communication communication3 = new Communication(conf);
-        communication3.sendMessage("gay", "2");
-
-        Communication communication4 = new Communication(conf);
-        communication4.sendMessage("gay", "2");
-
-        Communication communication5 = new Communication(conf);
-        communication5.sendMessage(conf.getNewSession(), "0");
-
-        Communication communication6 = new Communication(conf);
-        communication6.sendMessage("gay", "2");
 
 
         LOGGER.info("Run running");

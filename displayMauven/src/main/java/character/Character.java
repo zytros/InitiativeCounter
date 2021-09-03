@@ -6,16 +6,18 @@ import GUI.CharPanel;
 public class Character {
     private final int id;
     private int hp;
-    private int initiative;
+    private double initiative;
     private String name;
     public CharPanel panel;
 
 
 
-    public Character(int id) {
+    public Character(int id) {              // Character Constructor
         this.id = id;
-        this.name = "New Character";
-        this.panel = new CharPanel(name,0,0);
+        this.hp = 0;
+        this.initiative = 0.0;
+        this.name = "New Character";        // sets character name
+        this.panel = new CharPanel(name, hp, initiative);       // creates Character Panel
 
     }
     public String getName() {
@@ -42,11 +44,11 @@ public class Character {
         this.hp -=value;
     }
 
-    public int getInitiative() {
+    public double getInitiative() {
         return initiative;
     }
 
-    public void setInitiative(int initiative) {
+    public void setInitiative(double initiative) {
         this.initiative = initiative;
     }
 
@@ -57,7 +59,7 @@ public class Character {
                 panel.Name.setText(value);
                 break;
             case "setInitiative":
-                this.initiative = Integer.parseInt(value);
+                this.initiative = Double.parseDouble(value);
                 panel.InValue.setText(value);
                 break;
             case "changeHP":
