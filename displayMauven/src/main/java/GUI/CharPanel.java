@@ -17,28 +17,28 @@ public class CharPanel extends JPanel {
         this.setLayout(layout);
         Name = new JLabel(name);
         Name.setFont(kek);
-        Name.setForeground(Color.WHITE);
+        Name.setForeground(Color.BLACK);
         this.add(Name);
         this.add(new JLabel(""));
         HP = new JLabel("HP:");
 
 
         HP.setFont(kek);
-        HP.setForeground(Color.WHITE);
+        HP.setForeground(Color.BLACK);
         this.add(HP);
         HPValue = new JLabel(String.valueOf(Hp));
         HPValue.setFont(kek);
-        HPValue.setForeground(Color.WHITE);
+        HPValue.setForeground(Color.BLACK);
         this.add(HPValue);
 
         In = new JLabel("Initiative:");
-        In.setForeground(Color.WHITE);
+        In.setForeground(Color.BLACK);
         In.setFont(kek);
         this.add(In);
 
         InValue = new JLabel(String.valueOf(in));
         InValue.setFont(kek);
-        InValue.setForeground(Color.WHITE);
+        InValue.setForeground(Color.BLACK);
         this.add(InValue);
     }
 
