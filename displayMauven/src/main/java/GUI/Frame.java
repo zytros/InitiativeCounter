@@ -1,26 +1,25 @@
 package GUI;
 
-import communication.SharedQueue;
+import charManagement.CharContainer;
 
 import nodeQueue.*;
 import character.Character;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class Frame extends Thread {
     private JFrame frame;
     private JPanel panel;
-    private HashMap<Integer, Character> map;    // contains all Characters with their IDs
-    private CircleQueue queue;                  // Circle-queue that is sorted initiative-wise
-    private ArrayList<CharPanel> panelList;
+    private Map<Integer, Character> map;    // contains all Characters with their IDs
+    private ArrayList<Character> topX;
     private Container pane;
+    public CharContainer charContainer;
 
-    public Frame(HashMap<Integer, Character> map) {
+    public Frame(Map<Integer, Character> map) {
         this.map = map;
-        this.queue = new CircleQueue();
+        this.charContainer = new CharContainer();
+        topX = new ArrayList<>();
         this.create();
     }
 
@@ -44,23 +43,19 @@ public class Frame extends Thread {
         frame.setSize(500,500);
         frame.setVisible(true);
 
+
+
         while (true) {
-            panelList = new ArrayList<CharPanel>();
+
+
             for (Character d : map.values()) {
-                if (!queue.contains(d) && d != null) queue.add(d, d.getInitiative()); //if character is not in queue yet, add
+                if (!charContainer.contains(d) && d != null) charContainer.add(d); //if character is not in queue yet, add
             }
 
-            System.out.println(queue.size);
-
-            // this should be done only once though
-            if (queue.size > 0)panelList.add(queue.getCurrentC().panel);
-            if (queue.size > 1)panelList.add(queue.getCurrentN().getNext().getCharacter().panel);
-            if (queue.size > 2)panelList.add(queue.getCurrentN().getNext().getNext().getCharacter().panel);
-
-            System.out.print("This is the amount of prepared characters:" + panelList.size());
+            charContainer.getTopX(topX);
 
             for (int i = 0; i < 3; i++) {
-                CharPanel working = panelList.remove(0);
+                CharPanel working = topX.remove(0).getPanel();
                 c.gridx = 0;
                 c.gridy = numb;
                 pane.add(working, c);
@@ -74,7 +69,7 @@ public class Frame extends Thread {
                 //panel.repaint();
             }
             frame.add(panel);
-            try {Thread.sleep(300);} catch (InterruptedException e) {}
+            //try {Thread.sleep(3000);} catch (InterruptedException e) {}
 
         }
 

@@ -16,6 +16,42 @@ public class Configuration {
     private String setName;
     private String setInitiative;
     private String changeHP;
+    private String dm;
+    private String startFight;
+    private String endFight;
+    private String next;
+
+    public String getStartFight() {
+        return startFight;
+    }
+
+    public void setStartFight(String startFight) {
+        this.startFight = startFight;
+    }
+
+    public String getEndFight() {
+        return endFight;
+    }
+
+    public void setEndFight(String endFight) {
+        this.endFight = endFight;
+    }
+
+    public String getNext() {
+        return next;
+    }
+
+    public void setNext(String next) {
+        this.next = next;
+    }
+
+    public String getDm() {
+        return dm;
+    }
+
+    public void setDm(String dm) {
+        this.dm = dm;
+    }
 
     public String getSetName() {
         return setName;

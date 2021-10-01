@@ -28,7 +28,7 @@ public class test extends Thread {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                CharPanel char1 = C.get(Cnext).panel;
+                CharPanel char1 = C.get(Cnext).getPanel();
                 panels.add(char1);
                 char1.setBackground(Color.DARK_GRAY);
                 char1.setMaximumSize(new Dimension(600, 300));
