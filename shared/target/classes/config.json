@@ -1,16 +1,21 @@
 {
-  "port": 8080,
+  "port": 28080,
   "display": "display",
   "userEnd": "userEnd",
   "error": "error",
   "posResponse": "OK",
   "noData": "noData",
-  "host": "localhost",
+  "host": "lsic.duckdns.org",
   "serverShutdown": "shutdown",
   "password": "coc",
   "getId": "getId",
   "newSession": "newSession",
   "setName": "setName",
   "setInitiative": "setInitiative",
-  "cangeHP": "changeHP"
+  "cangeHP": "changeHP",
+  "setClass": "setClass",
+  "DM": "dm",
+  "startFight": "startFight",
+  "next": "next",
+  "endFight": "endFight"
 }

@@ -2,7 +2,6 @@ package Test;
 
 
 import GUI.Frame;
-import GUI.test;
 import character.Character;
 import com.inCounter.shared.config.Configuration;
 import com.inCounter.shared.config.ConfigurationManager;
@@ -12,8 +11,8 @@ import communication.SharedQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class Test2 {
@@ -25,7 +24,7 @@ public class Test2 {
         ConfigurationManager.getInstance().loadConfigurationFile("shared/src/main/resources/config.json");
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
-        HashMap<Integer,Character> C = new HashMap<>();
+        Map<Integer,Character> C = new HashMap<>();
         SharedQueue show = new SharedQueue();
 
         show.q.add(new Caller("1","addChar",null));
@@ -54,8 +53,19 @@ public class Test2 {
 
                 if (order.getMethod().equals("addChar")){
                     C.put(Integer.parseInt(order.getId()),new Character(Integer.parseInt(order.getId())));
-                }
-                else{
+                }else if(order.getId().equals("0")){
+                    switch(order.getMethod()){
+                        case "startFight":
+                            gui.charContainer.startFight();
+                            break;
+                        case "endFight":
+                            gui.charContainer.endFight();
+                            break;
+                        case "next":
+                            gui.charContainer.next();
+                    }
+
+                }else{
                     C.get(Integer.parseInt(order.getId())).callmethod(order.getMethod(), order.getValue());
                 }
 

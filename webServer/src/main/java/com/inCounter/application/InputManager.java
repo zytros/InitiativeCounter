@@ -104,7 +104,12 @@ public class InputManager {
             }
             return configuration.getPosResponse();
 
-        }else{
+        }else if (frags.get(0).equals(configuration.getDm())){
+
+            return configuration.getPosResponse();
+        }
+
+        else{
             throw new IllegalMessageException("Message has invalid sender");
         }
     }

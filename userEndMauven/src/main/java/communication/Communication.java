@@ -13,7 +13,7 @@ import java.net.Socket;
 
 public class Communication {
     private Configuration configuration;
-    private final int id;
+    public int id;      //TODO: make final and private when not testing
     private final static Logger LOGGER = LoggerFactory.getLogger(Communication.class);
 
     public Communication(Configuration configuration){
