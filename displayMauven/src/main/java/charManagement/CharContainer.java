@@ -11,6 +11,7 @@ public class CharContainer {
     int top = 0;
     private final int showTop = 3; // show top x characters on display
     private Character dummy = new Character(Integer.MAX_VALUE);
+    private boolean isFighting = false;
 
     public CharContainer(){
         dummy.setName("Dummy");
@@ -30,17 +31,21 @@ public class CharContainer {
     }
 
     public synchronized void startFight(){       //TODO: check for existance of top x
+
         if(entities.size() + npc.size() < showTop){
             for(int i = 0; i < (showTop - (entities.size() + npc.size())); i++){
                 npc.add(dummy);
             }
         }
+        top = 0;
+        isFighting = true;
         entities.addAll(npc);
         Collections.sort(entities);
     }
 
     public void endFight(){
         removeNPC();
+        isFighting = false;
     }
 
     public synchronized void getTopX(ArrayList<Character> target){
@@ -52,6 +57,9 @@ public class CharContainer {
     }
 
     public synchronized void next(){
+        if(!isFighting){
+            return;
+        }
         top = ++top % entities.size();
     }
 
