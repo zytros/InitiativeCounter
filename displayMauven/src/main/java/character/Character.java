@@ -99,7 +99,6 @@ public class Character implements Comparable{
                 changeClass(value);
                 break;
             case "setMaxHP":
-                //TODO: make method
                 setMaxHP(Integer.parseInt(value));
                 break;
             default:

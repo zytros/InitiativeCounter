@@ -30,4 +30,52 @@ public class CharInfo {
         warlock = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
         wizard = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
     }
+
+    public Image getBarbarian() {
+        return barbarian;
+    }
+
+    public Image getBard() {
+        return bard;
+    }
+
+    public Image getCleric() {
+        return cleric;
+    }
+
+    public Image getDruid() {
+        return druid;
+    }
+
+    public Image getFighter() {
+        return fighter;
+    }
+
+    public Image getMonk() {
+        return monk;
+    }
+
+    public Image getPaladin() {
+        return paladin;
+    }
+
+    public Image getRanger() {
+        return ranger;
+    }
+
+    public Image getRogue() {
+        return rogue;
+    }
+
+    public Image getSorcerer() {
+        return sorcerer;
+    }
+
+    public Image getWarlock() {
+        return warlock;
+    }
+
+    public Image getWizard() {
+        return wizard;
+    }
 }

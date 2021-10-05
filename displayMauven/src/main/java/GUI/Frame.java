@@ -95,25 +95,8 @@ public class Frame extends Thread {
 
             charContainer.getTopX(topX);
 
-            // updatePos();
             updatePoss();
-/*
 
-            for (int i = 0; i < 3; i++) {
-                CharPanel working = topX.remove(0).getPanel();
-                gridBagConstraints.gridx = 0;
-                gridBagConstraints.gridy = numb;
-                pane.add(working, gridBagConstraints);
-                gridBagConstraints.insets = new Insets(40,0,0,0);
-                numb++;
-
-                //frame.setLayout(null);
-                frame.add(working, gridBagConstraints);
-                //panel.invalidate();
-                //panel.validate();
-                //panel.repaint();
-            }
-            frame.add(panel);*/
             try {Thread.sleep(3000);} catch (InterruptedException e) {}
 
         }
@@ -121,22 +104,10 @@ public class Frame extends Thread {
     }
 
 
-    //TODO: make work, does not remove old objects
-    void updatePos(){
-        panel.remove(char1);
-        panel.remove(char2);
-        panel.remove(char3);
-        panel.add(topX.get(0).getPanel());
-        panel.add(topX.get(1).getPanel());
-        panel.add(topX.get(2).getPanel());
-        panel.revalidate();
-        panel.repaint();
-    }
+
 
     /**
-     *
-     * this updates the content of the dummy characters
-     *
+     * this updates the content of the dummy characters by calling their update method
      */
 
     void updatePoss(){
