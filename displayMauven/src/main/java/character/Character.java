@@ -6,6 +6,7 @@ import GUI.CharPanel;
 public class Character implements Comparable{
     private final int id;
     private int hp;
+    private int maxHP = 100;
     private double initiative;
     private String name;
     private CharPanel panel;
@@ -31,6 +32,10 @@ public class Character implements Comparable{
     public void setName(String name){
         this.name = name;
         panel.Name.setText(name);
+    }
+
+    public int getMaxHP() {
+        return maxHP;
     }
 
     public CharPanel getPanel(){
@@ -61,6 +66,10 @@ public class Character implements Comparable{
         return initiative;
     }
 
+    public void setMaxHP(int maxHP){
+        this.maxHP = maxHP;
+    }
+
     public void setInitiative(String value){
         this.initiative = Double.parseDouble(value);
         panel.InValue.setText(value);
@@ -88,6 +97,10 @@ public class Character implements Comparable{
                 break;
             case "setClass":
                 changeClass(value);
+                break;
+            case "setMaxHP":
+                //TODO: make method
+                setMaxHP(Integer.parseInt(value));
                 break;
             default:
 

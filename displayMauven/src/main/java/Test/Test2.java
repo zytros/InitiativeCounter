@@ -27,6 +27,8 @@ public class Test2 {
         Map<Integer,Character> C = new HashMap<>();
         SharedQueue show = new SharedQueue();
 
+
+
         show.q.add(new Caller("1","addChar",null));
         show.q.add(new Caller("2","addChar",null));
         show.q.add(new Caller("3","addChar",null));
