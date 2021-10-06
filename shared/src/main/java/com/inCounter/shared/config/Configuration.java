@@ -20,6 +20,15 @@ public class Configuration {
     private String startFight;
     private String endFight;
     private String next;
+    private String getCharInfo;
+
+    public String getGetCharInfo() {
+        return getCharInfo;
+    }
+
+    public void setGetCharInfo(String getCharInfo) {
+        this.getCharInfo = getCharInfo;
+    }
 
     public String getStartFight() {
         return startFight;

@@ -25,4 +25,15 @@ public class Communication {
             LOGGER.error("Joining error of Message Sender", e);
         }
     }
+
+    public void sendMessage(String method, String value, String target){
+        MessageSender messageSender = new MessageSender(new Message(id, method, value), configuration, target);
+        Thread t = new Thread(messageSender);
+        t.start();
+        try {
+            t.join();
+        }catch (InterruptedException e){
+            LOGGER.error("Joining error of Message Sender", e);
+        }
+    }
 }

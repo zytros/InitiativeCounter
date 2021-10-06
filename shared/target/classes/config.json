@@ -17,5 +17,6 @@
   "DM": "dm",
   "startFight": "startFight",
   "next": "next",
-  "endFight": "endFight"
+  "endFight": "endFight",
+  "setMaxHP": "setMaxHP"
 }

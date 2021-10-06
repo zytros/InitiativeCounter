@@ -43,7 +43,7 @@ public class Test2 {
         g.start();
 
 
-
+        //TODO: get char info
 
         for(int i = 0; i < 100;) {
 

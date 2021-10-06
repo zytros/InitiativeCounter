@@ -15,12 +15,22 @@ public class MessageSender extends Thread{
 
     final Message message;
     Configuration configuration;
-    private final static Logger LOGGER = LoggerFactory.getLogger(Communication.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(MessageSender.class);
+    String target;
+    final boolean ret;
 
 
     public MessageSender(Message message, Configuration configuration){
         this.message = message;
         this.configuration = configuration;
+        ret = false;
+    }
+
+    public MessageSender(Message message, Configuration configuration, String target){
+        this.message = message;
+        this.configuration = configuration;
+        this.target = target;
+        ret = true;
     }
 
 
@@ -38,6 +48,7 @@ public class MessageSender extends Thread{
             DataInputStream inputStream = new DataInputStream(client.getInputStream());
             response = inputStream.readUTF();
 
+            target = response;
 
             client.close();
 
