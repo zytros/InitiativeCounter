@@ -18,17 +18,17 @@ public class CharInfo {
 
     public CharInfo(){
         barbarian = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        bard = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        cleric = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        druid = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        fighter = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        monk = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        paladin = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        ranger = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        rogue = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        sorcerer = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        warlock = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
-        wizard = Toolkit.getDefaultToolkit().getImage("resources\\barbarian_resized.jpg");
+        bard = Toolkit.getDefaultToolkit().getImage("resources\\bard_resized.jpg");
+        cleric = Toolkit.getDefaultToolkit().getImage("resources\\cleric_resized.jpg");
+        druid = Toolkit.getDefaultToolkit().getImage("resources\\druid_resized.jpg");
+        fighter = Toolkit.getDefaultToolkit().getImage("resources\\fighter_resized.jpg");
+        monk = Toolkit.getDefaultToolkit().getImage("resources\\monk_resized.jpg");
+        paladin = Toolkit.getDefaultToolkit().getImage("resources\\paladin_resized.jpg");
+        ranger = Toolkit.getDefaultToolkit().getImage("resources\\ranger_resized.jpg");
+        rogue = Toolkit.getDefaultToolkit().getImage("resources\\rogue_resized.jpg");
+        sorcerer = Toolkit.getDefaultToolkit().getImage("resources\\sorcerer_resized.jpg");
+        warlock = Toolkit.getDefaultToolkit().getImage("resources\\warlock_resized.jpg");
+        wizard = Toolkit.getDefaultToolkit().getImage("resources\\wizard_resized.jpg");
     }
 
     public Image getBarbarian() {

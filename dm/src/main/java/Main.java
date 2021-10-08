@@ -28,8 +28,10 @@ public class Main {
         communication.sendMessage(configuration.getNext(), "0");
     }
 
-    private void getChar(int id){
-        communication.sendMessage(configuration.getGetCharInfo(), String.valueOf(id));
+    private String getChar(int id){
+        String target = "";
+        communication.sendMessage(configuration.getGetCharInfo(), String.valueOf(id), target);
+        return target;
         //TODO;
     }
 

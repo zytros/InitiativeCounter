@@ -18,5 +18,6 @@
   "startFight": "startFight",
   "next": "next",
   "endFight": "endFight",
-  "setMaxHP": "setMaxHP"
+  "setMaxHP": "setMaxHP",
+  "getCharInfo": "getCharInfo"
 }

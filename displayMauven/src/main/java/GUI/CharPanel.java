@@ -49,7 +49,7 @@ public class CharPanel extends JPanel {
         InValue.setForeground(Color.BLACK);
         this.add(InValue);
 
-        setPreferredSize(new Dimension(500, 281));
+        setPreferredSize(new Dimension(450, 252));
 
     }
 
