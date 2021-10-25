@@ -21,6 +21,24 @@ public class Configuration {
     private String endFight;
     private String next;
     private String getCharInfo;
+    private String addNPC;
+    private String removeNPC;
+
+    public String getAddNPC() {
+        return addNPC;
+    }
+
+    public void setAddNPC(String addNPC) {
+        this.addNPC = addNPC;
+    }
+
+    public String getRemoveNPC() {
+        return removeNPC;
+    }
+
+    public void setRemoveNPC(String removeNPC) {
+        this.removeNPC = removeNPC;
+    }
 
     public String getGetCharInfo() {
         return getCharInfo;

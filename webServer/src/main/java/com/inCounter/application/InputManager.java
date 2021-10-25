@@ -51,9 +51,9 @@ public class InputManager {
             str_msg[1] = frags.get(2);
             str_msg[2] = frag3;
         }else if (frags.size() == 4){
-            str_msg[0] = frags.get(1);
-            str_msg[1] = frags.get(2);
-            str_msg[2] = frags.get(3);
+            str_msg[0] = frags.get(1);      //id
+            str_msg[1] = frags.get(2);      //method
+            str_msg[2] = frags.get(3);      //value
         }
 
 
@@ -61,6 +61,9 @@ public class InputManager {
         /**
          * message decoding
          */
+
+
+
         if(frags.get(0).equals(configuration.getDisplay())){ //message comes from display, requesting data
             if(dataBuffer.hasData()){
                 return dataBuffer.getBuffer();
@@ -105,7 +108,76 @@ public class InputManager {
             return configuration.getPosResponse();
 
         }else if (frags.get(0).equals(configuration.getDm())){
+            //TODO: impleent dm
+            /**
+             * List of dm commands:
+             * -add NPC
+             * -remove NPC
+             * -change NPC
+             * -next turn
+             * -start fight
+             * -end fignt
+             */
+            if(str_msg[1].equals(configuration.getNext())){
+                /**
+                 * next turn
+                 */
+                int id = Integer.parseInt(str_msg[0]);
+                assert id == 0;
+                String method = str_msg[1];
+                String value = str_msg[2];
+                Message msg = new Message(id, method, value);
+                dataBuffer.append(msg);
 
+            }else if(str_msg[1].equals(configuration.getStartFight())){
+                /**
+                 * start fight
+                 */
+                int id = Integer.parseInt(str_msg[0]);
+                assert id == 0;
+                String method = str_msg[1];
+                String value = str_msg[2];
+                Message msg = new Message(id, method, value);
+                dataBuffer.append(msg);
+            }else if(str_msg[1].equals(configuration.getEndFight())){
+                /**
+                 * end fight
+                 */
+                int id = Integer.parseInt(str_msg[0]);
+                assert id == 0;
+                String method = str_msg[1];
+                String value = str_msg[2];
+                Message msg = new Message(id, method, value);
+                dataBuffer.append(msg);
+            }else if(str_msg[1].equals(configuration.getAddNPC())){
+                /**
+                 * add NPC
+                 */
+                int id = Integer.parseInt(str_msg[0]);
+                assert id > 100;
+                String method = str_msg[1];
+                String value = str_msg[2];
+                Message msg = new Message(id, method, value);
+                dataBuffer.append(msg);
+            }else if(str_msg[1].equals(configuration.getRemoveNPC())){
+                /**
+                 * remove NPC
+                 */
+                int id = Integer.parseInt(str_msg[0]);
+                assert id > 100;
+                String method = str_msg[1];
+                String value = str_msg[2];
+                Message msg = new Message(id, method, value);
+                dataBuffer.append(msg);
+            }else if(isChangeNPC(str_msg[2])){
+                /**
+                 * change NPC
+                 */
+            }else{
+                /**
+                 * throw something
+                 */
+            }
             return configuration.getPosResponse();
         }
 
@@ -120,6 +192,12 @@ public class InputManager {
 
     private String getId(){
         return Integer.toString(++id);
+    }
+
+    private boolean isChangeNPC(String method){
+        //TODO
+        //if
+        return true;
     }
 
 }

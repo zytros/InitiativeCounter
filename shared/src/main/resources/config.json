@@ -19,5 +19,7 @@
   "next": "next",
   "endFight": "endFight",
   "setMaxHP": "setMaxHP",
-  "getCharInfo": "getCharInfo"
+  "getCharInfo": "getCharInfo",
+  "addNPC": "addNPC",
+  "removeNPC": "removeNPC"
 }
