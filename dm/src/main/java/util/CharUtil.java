@@ -1,18 +1,19 @@
+package util;
+
 import com.inCounter.shared.config.Configuration;
 import communication.Communication;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
-public class Main {
-    Configuration configuration = new Configuration();
-    Communication communication = new Communication(configuration);
+public class CharUtil {
+    Configuration configuration;
+    Communication communication;
     int npcid = 100;
     ArrayList<Character> npcList = new ArrayList<>();
 
-    public static void main(String[] args){
-
+    public CharUtil(Configuration configuration, Communication communication){
+        this.configuration = configuration;
+        this.communication = communication;
     }
 
     //TODO: functions startFight, endFight, next, addMonster, getChar
@@ -46,5 +47,4 @@ public class Main {
         return target;
         //TODO;
     }
-
 }

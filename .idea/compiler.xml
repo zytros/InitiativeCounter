@@ -9,6 +9,7 @@
         <module name="shared" />
         <module name="dm" />
         <module name="userEndMauven" />
+        <module name="scraper" />
         <module name="webServer" />
         <module name="displayMauven" />
       </profile>
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="displayMauven" target="11" />
       <module name="dm" target="11" />
+      <module name="scraper" target="11" />
       <module name="shared" target="11" />
       <module name="userEndMauven" target="11" />
       <module name="webServer" target="11" />

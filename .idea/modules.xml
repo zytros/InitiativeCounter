@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/displayMauven/displayMauven.iml" filepath="$PROJECT_DIR$/displayMauven/displayMauven.iml" />
       <module fileurl="file://$PROJECT_DIR$/dm/dm.iml" filepath="$PROJECT_DIR$/dm/dm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/git.iml" filepath="$PROJECT_DIR$/.idea/git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scraper/scraper.iml" filepath="$PROJECT_DIR$/scraper/scraper.iml" />
       <module fileurl="file://$PROJECT_DIR$/shared/shared.iml" filepath="$PROJECT_DIR$/shared/shared.iml" />
       <module fileurl="file://$PROJECT_DIR$/userEndMauven/userEndMauven.iml" filepath="$PROJECT_DIR$/userEndMauven/userEndMauven.iml" />
       <module fileurl="file://$PROJECT_DIR$/webServer/webServer.iml" filepath="$PROJECT_DIR$/webServer/webServer.iml" />

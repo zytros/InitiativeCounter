@@ -1,3 +1,5 @@
+package util;
+
 public class Character {
     private int id;                               //min 100
     private String name;
