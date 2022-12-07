@@ -1,11 +1,15 @@
 #otto
-https://www.dndbeyond.com/characters/52238149
+https://character-service.dndbeyond.com/character/v5/character/52238149
+65
 
 #no_we_pon
-https://www.dndbeyond.com/characters/61859715
+https://character-service.dndbeyond.com/character/v5/character/61859715
+52
 
 #larry_lancer
-https://www.dndbeyond.com/characters/40694497
+https://character-service.dndbeyond.com/character/v5/character/40694497
+39
 
 #Muss_los_ini
-https://www.dndbeyond.com/characters/43085970
+https://character-service.dndbeyond.com/character/v5/character/43085970
+84
